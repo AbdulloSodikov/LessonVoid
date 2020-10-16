@@ -9,6 +9,11 @@ public class Main {
         int[] array = {10, 2, 3, 4, 5, 60, 7, 8, 9};  // Задача № 4
         int maxNumberInArray = maxInArray(array);
 
+        int[] arrayInPosAndNegNumber = {1, -2, 3, -4, 5, -6, 7, -8, 9, -10};  // Задача № 5
+        int[] arrayOnlyPosNumber = filterArray(arrayInPosAndNegNumber);
+
+        int[] array1 = {10, 2, 3, 4, 5, 60, 7, 8, 9}; // Задача № 6
+        int totalNumberInArray = total(array1);
     }
 
     public static int max(int x, int y) {
@@ -35,4 +40,29 @@ public class Main {
         }
         return counterMax;
     }
+    public  static int [] filterArray (int[] array) {
+        int counterPosNumber = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] > 0) {
+                counterPosNumber++;
+            }
+        }
+        int[] arrayPosNumber = new int[counterPosNumber];
+        int j = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] > 0) {
+                arrayPosNumber[j] = array[i];
+                j++;
+            }
+        }
+        return arrayPosNumber;
+    }
+    public static int total (int [] array){
+        int counterTotal = 0;
+        for ( int i = 0; i < array.length; i++){
+            counterTotal += array[i];
+        }
+        return counterTotal;
+    }
+
 }
